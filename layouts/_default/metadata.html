@@ -1,0 +1,19 @@
+{{ if or .Params.categories .Params.tags .Params.series }}
+    <span class="metadata">
+        {{ with .Params.series }}
+            In: {{ range . }}<a class="series" href="series/{{ . | urlize }}">{{ . }}</a> {{ end }}
+        {{ end }}
+
+        {{ if and .Params.series .Params.categories }}&nbsp;/&nbsp;{{ end }}
+
+        {{ with .Params.categories }}
+            As: {{ range . }}<a class="categories" href="categories/{{ . | urlize }}">{{ . }}</a> {{ end }}
+        {{ end }}
+
+        {{ if and .Params.tags (or .Params.series .Params.categories) }}<br />{{ end }}
+
+        {{ with .Params.tags }}
+            About: {{ range .}}<a class="tags" href="tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
+        {{ end }}
+    </span>
+{{ end }}

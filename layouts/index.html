@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 blog-sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
+
+        <div class="col-sm-8 col-sm-offset-1 blog-main">
+            {{ range first 10 (where .Paginator.Pages "Section" "posts") }}
+                {{ .Render "summary" }}
+            {{ end }}
+
+            {{ partial "pagination.html" . }}
+
+            {{ partial "footer.html" . }}

@@ -1,0 +1,15 @@
+<p class="pagination">
+    <center>
+        {{ with $.Paginator.Prev }}<a class="btn btn-primary" href="{{ .URL }}">&lt;</a>{{ end }}
+
+        {{ range $index, $pager := $.Paginator.Pagers }}
+            {{ if eq $.Paginator.PageNumber (add $index 1) }}
+                <button class="btn btn-primary" disabled="disabled">{{ add $index 1 }}</button>
+            {{ else }}
+                <a class="btn btn-primary" href="{{ $pager.URL }}">{{ add $index 1 }}</a>
+            {{ end }}
+        {{ end }}
+
+        {{ with $.Paginator.Next }}<a class="btn btn-primary" href="{{ .URL }}">&gt;</a>{{ end }}
+    </center>
+</p>
