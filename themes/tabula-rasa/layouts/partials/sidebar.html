@@ -1,0 +1,83 @@
+<div class="sidebar">
+    <div class="sidebar-about">
+        <a href="{{ .Site.BaseURL }}">
+            <img src="media/me.jpg" title="{{ .Site.Author.name }}" alt="Me" />
+            <h1 class="sidebar-title">{{ .Site.Title }}</h1>
+        </a>
+        <span class="sidebar-tagline">{{ with .Site.Params.Description }} {{ . | safeHTML}} {{end}}</span>
+    </div>
+    <nav class="sidebar-nav">
+        <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item nav-home">
+                [<a class="sidebar-link" href="{{.Site.BaseURL}}">Home</a>]
+            </li>
+            <li class="sidebar-nav-item">
+                [<a class="sidebar-link" href="https://about.me/{{ .Site.Params.about_me }}">About Me</a>]
+            </li>
+            <li class="sidebar-nav-item">
+                [<a class="sidebar-link" href="posts/">Posts</a>]
+            </li>
+        </ul>
+    </nav>
+    <div class="sidebar-externals">
+        {{ if or .Site.Author.github .Site.Author.twitter .Site.Author.facebook .Site.Author.googleplus .Site.Author.linkedin }}
+
+            {{ with .Site.Author.github }}
+                <a href="https://github.com/{{ . }}" >
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x"></i>
+                    </span>
+                </a>
+            {{ end }}
+
+            {{ with .Site.Author.twitter }}
+                <a href="https://twitter.com/{{ . }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x"></i>
+                    </span>
+                </a>
+            {{ end }}
+
+            {{ with .Site.Author.facebook }}
+                <a href="https://www.facebook.com/{{ . }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-facebook fa-stack-1x"></i>
+                    </span>
+                </a>
+            {{ end }}
+
+            {{ with .Site.Author.googleplus }}
+                <a href="https://plus.google.com/+{{ . }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-google-plus fa-stack-1x"></i>
+                    </span>
+                </a>
+            {{ end }}
+
+            {{ with .Site.Author.linkedin }}
+                <a href="https://www.linkedin.com/in/{{ . }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-linkedin fa-stack-1x"></i>
+                    </span>
+                </a>
+            {{ end }}
+
+        {{ end }}
+        <a href="mailto:{{ .Site.Author.email }}">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x"></i>
+            </span>
+        </a>
+    </div>
+    <hr />
+    <div class="sidebar-bottom">
+        <p>Powered by <a href="http://gohugo.io">Hugo</a>. Theme: <a href="https://github.com/otaviokr/tabula-rasa">Tabula-rasa</a>.</p>
+        <p>Copyright &copy; {{.Now.Format "2006"}}. All rights reserved.</p>
+    </div>
+</div>

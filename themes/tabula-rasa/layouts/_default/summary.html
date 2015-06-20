@@ -1,0 +1,18 @@
+<section class="post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<small>(draft)</small>{{end}}</a></h2>
+        <p>
+            {{ .Render "metadata" }}
+            <span class="post-date">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006, 15:04" }}</time>
+            </span>
+        </p>
+    </header>
+    <div class="post-description">
+        <p class="summary">{{ .Summary }}</p>
+        {{ if .Truncated }}
+            <p class="readmore"><a class="btn btn-primary" href="{{ .RelPermalink }}">Read more...</a></p>
+        {{ end }}
+    </div>
+    <p class="post-eof">-------------------- EOF</p>
+</section>
