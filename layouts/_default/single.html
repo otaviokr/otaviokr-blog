@@ -1,1 +1,35 @@
-{{ .Content }}
+{{ partial "header.html" . }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 blog-sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
+
+        <div class="col-sm-8 col-sm-offset-1 blog-main">
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<small>(draft)</small>{{end}}</a>
+                    </h2>
+                    <p>
+                        {{ .Render "metadata" }}
+                        <span class="post-date">
+                            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                                {{ .Date.Format "02 Jan 2006, 15:04" }}
+                            </time>
+                        </span>
+                    </p>
+                </header>
+                <div class="post-description">
+                    <hr />
+                    {{ if .Params.toc }}
+                        <p>Here's what this post is about: </p>
+                        {{ .TableOfContents }}
+                        <hr width="75%" />
+                    {{ end }}
+                    {{ .Content }}
+                </div>
+            </section>
+
+            {{ partial "footer.html" . }}

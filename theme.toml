@@ -4,7 +4,7 @@ license = "MIT"
 licenselink = "https://github.com/otaviokr/tabula-rasa/LICENSE"
 homepage = "https://github.com/otaviokr/tabula-rasa"
 tags = ["blog", "personal", "minimalist"]
-features = ["sidebar"]
+features = ["sidebar", "bootstrap3"]
 
 [author]
   name = "Otavio K Rofatto"

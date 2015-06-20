@@ -1,21 +1,25 @@
 {{ partial "header.html" . }}
 
-<div id="container">
-    <div class="section">
-        <ul class="posts">
-            {{ range .Data.Pages }}
-                {{ if eq .Type .Section }}
-                <li>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-                        {{ .Date.Format "Mon, Jan 2, 2006" }}
-                    </time>
-                </li>
-                {{ end }}
-            {{ end }}
-        </ul>
-    </div>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 blog-sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
 
-{{ partial "sidebar.html" . }}
-{{ partial "footer.html" . }}
+        <div class="col-sm-8 col-sm-offset-1 blog-main">
+            <section class="post">
+                <ul class="posts">
+                    {{ range .Data.Pages }}
+                        {{ if eq .Type .Section }}
+                            <li>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                                    {{ .Date.Format "Mon, Jan 2, 2006" }}
+                                </time>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </section>
+
+            {{ partial "footer.html" . }}

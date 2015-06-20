@@ -4,6 +4,9 @@
 
 *.iml
 
+## /themes/ will only contain the themes to apply the layout. It is best to just clone from original repo.
+themes/
+
 ## Directory-based project format:
 .idea/
 # if you remove the above rule, at least ignore the following:
