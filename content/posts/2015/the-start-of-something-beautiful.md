@@ -4,7 +4,7 @@ date = "2015-06-03T22:27:00+02:00"
 description = "First post in this blog, just telling what you should expect to find here."
 categories = [ "metablog" ]
 series = []
-slug = "the-star-of-something-beautiful"
+slug = "the-start-of-something-beautiful"
 project_url = "https://otaviokr.github.io"
 +++
 
