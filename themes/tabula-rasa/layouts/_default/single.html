@@ -30,6 +30,17 @@
                     {{ end }}
                     {{ .Content }}
                 </div>
+                {{ if .Site.Author.intense_debate }}
+                    <div class="comments">
+                        <script>
+                            var idcomments_acct = '{{ .Site.Author.intense_debate }}';
+                            var idcomments_post_id;
+                            var idcomments_post_url;
+                        </script>
+                        <span id="IDCommentsPostTitle" style="display:none"></span>
+                        <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+                    </div>
+                {{ end }}
             </section>
 
             {{ partial "footer.html" . }}
