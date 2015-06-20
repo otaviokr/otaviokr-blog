@@ -4,6 +4,10 @@
 # To avoid having the website output files in the source code project.
 /public
 
+# UNIX2DOS tool should not be versioned.
+/bin/unix2dos/bin
+/bin/unix2dos/share
+
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
