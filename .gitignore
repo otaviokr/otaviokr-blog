@@ -1,4 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
+
+### Custom input by otaviokr
+# To avoid having the website output files in the source code project.
+/public
+
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
