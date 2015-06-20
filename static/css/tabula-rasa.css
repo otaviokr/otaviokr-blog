@@ -37,7 +37,9 @@ html body div.container div.row div.blog-sidebar div.sidebar div.sidebar-bottom 
     text-align: -webkit-center;
 }
 
-html body div.container div.row div.blog-main {}
+html body div.container div.row div.blog-main {
+    text-align: justify;
+}
 
 html body div.container div.row div.blog-main div#container {}
 
