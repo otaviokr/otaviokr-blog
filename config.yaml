@@ -1,0 +1,34 @@
+---
+contentdir: "content"
+layoutdir: "layouts"
+publishdir: "public"
+taxonomies:
+  category: "categories"
+  series: "series"
+baseurl: "http://otaviokr.github.io"
+title: "Otaviokr's Blog"
+canonifyurls: true
+
+theme: "tabula-rasa"
+paginate: 10
+pygmentsuseclasses: false
+pygmentsstyle: "tango"
+
+languageCode: "en-us"
+
+author:
+  name: "Otavio Krambeck Rofatto"
+  email: "rofatto@gmail.com"
+
+  github: "otaviokr"
+  twitter: "okrofatto"
+  facebook: ""
+  googleplus: ""
+  linkedin: "otaviorofatto"
+  tag_manager: "GTM-T9L4PM"
+
+params:
+  notoc: true
+
+blackfriday:
+  plainIdAnchors: true
